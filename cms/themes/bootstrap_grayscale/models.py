@@ -174,6 +174,20 @@ class BootstrapGrayscalePage(Page):
 
     seo_title = 'Bootstrap Grayscale Page'
 
+
+class BootstrapGrayscaleShopBlock(blocks.StructBlock):
+
+    class Meta:
+        app_label = 'bootstrap_grayscale_shop'
+        template = 'bootstrap_grayscale/grayscale_shop/bootstrap_grayscale_shop_page.html'
+
+
+class BootstrapGrayscaleShopPage(Page):
+    # body = BootstrapGrayscaleShopBlock()
+
+    seo_title = 'Bootstrap Grayscale Shop Page'
+
+
 #
 # class Header(models.Model):
 #     site_settings = ParentalKey('SiteSettings', on_delete=models.CASCADE, related_name='header')
