@@ -62,12 +62,20 @@ INSTALLED_APPS = [
     'wagtail.admin',
     'wagtail.core',
 
+    'wagtailmenus',
     'modelcluster',
     'taggit',
+    'widget_tweaks',
 
     # 'oscar',
     'wagtail',
+
     'oscar_wagtail',
+
+    'cms',
+    'cms.themes.bootstrap_grayscale',
+    'cms.themes.bootstrap_business_casual',
+
 ] + get_core_apps(['apps.catalogue'])
 
 MIDDLEWARE = [
@@ -168,7 +176,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'cms/static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -179,5 +187,7 @@ OSCAR_DASHBOARD_NAVIGATION.insert(1, {
     'url_name': 'wagtailadmin_home',
     'access_fn': lambda user, *args: user.has_perm('wagtailadmin.access_admin')
 })
+
+OSCAR_DEFAULT_CURRENCY = 'USD'
 
 WAGTAIL_SITE_NAME = 'eBwagtail'
